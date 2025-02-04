@@ -26,7 +26,8 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 #  Install the containerd software
-apt-get update &&  apt-get install containerd.io -y
+apt-get update
+apt-get install containerd.io -y
 containerd config default | tee /etc/containerd/config.toml
 sed -e 's/SystemdCgroup = false/SystemdCgroup = true/g' -i /etc/containerd/config.toml
 sleep 3
@@ -46,3 +47,19 @@ apt-get update
 apt-get install -y kubeadm=1.30.1-1.1 kubelet=1.30.1-1.1 kubectl=1.30.1-1.1
 
 apt-mark hold kubelet kubeadm kubectl
+
+# Ready to continue
+sleep 3
+echo
+echo
+echo '***************************'
+echo
+echo "Continue to the next step"
+echo
+echo "nitialize  the  cp.   Scan  through  the  output."
+echo "kubeadm join command from control plane."
+echo
+echo "Don't forget to edit /etc/hosts to use the alias IP"
+echo 
+echo '***************************'
+echo
