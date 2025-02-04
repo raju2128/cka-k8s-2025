@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: httpd
+  name: httpd
+  namespace: default
+spec:
+  containers:
+  - image: httpd:latest
+    imagePullPolicy: Always
+    name: httpd
+    ports:
+    - containerPort: 80
+      protocol: TCP
+    env:
+    - name: MY_ENV
+      valueFrom:
+        configMapKeyRef:
+          name: exmp-cm
+          key: text
+    envFrom:
+    - configMapRef:
+        name: exmp-cm
+    volumeMounts:
+    - name: exmp-vol
+      mountPath: /usr/local/apache2/htdocs/      
+  volumes:
+  - name: exmp-vol
+    configMap:
+      name: index    
+

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: web-two
+  name: web-two
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-two
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: web-two
+    spec:
+      containers:
+      - image: httpd:latest
+        name: httpd
+        resources: {}
+        volumeMounts:               #<--  Add these three lines
+        - name: vol-httpd
+          mountPath: /usr/local/apache2/htdocs/        
+        ports:  
+        - containerPort: 80
+          protocol: TCP
+      volumes:
+      - name: vol-httpd
+        configMap:
+          name: index-httpd
+        
+                
+status: {}

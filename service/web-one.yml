@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: web-one
+  name: web-one
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-one
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: web-one
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+        volumeMounts:               #<--  Add these three lines
+        - name: vol-nginx
+          mountPath: /usr/share/nginx/html          
+        ports:  
+        - containerPort: 80
+          protocol: TCP
+      volumes:
+      - name: vol-nginx
+        configMap:
+          name: index-nginx
+        
+                
+status: {}
