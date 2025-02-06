@@ -9,9 +9,9 @@ spec:
       role: frontend
   ingress:
     - from:
-        - <EDIT: UPDATE WITH THE CONFIGURATION NEEDED TO WHITELEST CLIENT USING NAMESPACESELECTOR>
-            <EDIT: UPDATE WITH THE CONFIGURATION NEEDED TO WHITELEST CLIENT USING NAMESPACESELECTOR>
-              <EDIT: UPDATE WITH THE CONFIGURATION NEEDED TO WHITELEST CLIENT USING NAMESPACESELECTOR>
+        - namespaceSelector:
+            matchLabels:
+              role: management-ui
       ports:
         - protocol: TCP
           port: 80
