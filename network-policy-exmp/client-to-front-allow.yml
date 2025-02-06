@@ -1,0 +1,17 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  namespace: stars
+  name: frontend-policy
+spec:
+  podSelector:
+    matchLabels:
+      role: frontend
+  ingress:
+    - from:
+        - <EDIT: UPDATE WITH THE CONFIGURATION NEEDED TO WHITELEST CLIENT USING NAMESPACESELECTOR>
+            <EDIT: UPDATE WITH THE CONFIGURATION NEEDED TO WHITELEST CLIENT USING NAMESPACESELECTOR>
+              <EDIT: UPDATE WITH THE CONFIGURATION NEEDED TO WHITELEST CLIENT USING NAMESPACESELECTOR>
+      ports:
+        - protocol: TCP
+          port: 80
