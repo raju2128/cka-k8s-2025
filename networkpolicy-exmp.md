@@ -1,5 +1,5 @@
 https://lex.infosysapps.com/web/en/viewer/video/lex_auth_013071008861167616553?collectionId=lex_auth_013066144133636096107&collectionType=Course&pathId=lex_auth_013071006208475136552
-archive.eksworkshop.com/beginner/120_network-policies/calico/stars_policy_demo/create_resources.files/management-ui.yaml
+https://archive.eksworkshop.com/beginner/120_network-policies/calico/stars_policy_demo/create_resources.files/management-ui.yaml
  
 archive.eksworkshop.com/beginner/120_network-policies/calico/stars_policy_demo/create_resources.files/backend.yaml
  
